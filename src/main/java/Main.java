@@ -6,10 +6,14 @@ public class Main {
         int countPersons;
         while (true) {
             System.out.println("На скольких человек необходимо разделить счёт?");
-            countPersons = scanner.nextInt();
-            scanner.nextLine();
-            if (countPersons > 1) {
-                break;
+            if (scanner.hasNextInt()) {
+                countPersons = scanner.nextInt();
+                scanner.nextLine();
+                if (countPersons > 1) {
+                    break;
+                }
+            } else {
+                scanner.next();
             }
             System.out.println("Это некорректное значение. Попробуем еще раз?");
         }
@@ -20,10 +24,14 @@ public class Main {
             float price;
             while (true) {
                 System.out.println("Введите стоимость товара:");
-                price = scanner.nextFloat();
-                scanner.nextLine();
-                if (price > 0) {
-                    break;
+                if (scanner.hasNextFloat()) {
+                    price = scanner.nextFloat();
+                    scanner.nextLine();
+                    if (price > 0) {
+                        break;
+                    }
+                } else {
+                    scanner.next();
                 }
                 System.out.println("Наверное вы ошиблись в стоимости. Попробуйте еще раз.");
             }
